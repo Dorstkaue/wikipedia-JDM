@@ -1,0 +1,267 @@
+
+/* ===== Reset e Estilos Globais ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* ===== Header e Navegação ===== */
+header {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+header nav li {
+    flex: 1;
+    min-width: 150px;
+}
+
+header nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+header nav a:hover,
+header nav a:focus {
+    background-color: #333;
+    border-bottom-color: #e74c3c;
+    outline: none;
+}
+
+header nav a:focus {
+    outline: 2px solid #e74c3c;
+    outline-offset: -2px;
+}
+
+/* ===== Container Principal ===== */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ===== Main Content ===== */
+main {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 0.5rem;
+}
+
+main > p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+abbr {
+    cursor: help;
+    text-decoration: underline dotted;
+    text-decoration-color: #999;
+}
+
+/* ===== Sections ===== */
+section {
+    margin-bottom: 2rem;
+    scroll-margin-top: 100px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+section ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+section ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+section ul li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+section ul li strong {
+    color: #1a1a1a;
+}
+
+/* ===== Aside (Sumário) ===== */
+aside {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 80px;
+}
+
+aside h2 {
+    font-size: 1.3rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
+aside nav ol {
+    list-style: decimal;
+    list-style-position: inside;
+    padding: 0;
+}
+
+aside nav li {
+    margin-bottom: 0.7rem;
+    list-style-position: inside;
+}
+
+aside nav a {
+    color: #e74c3c;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+aside nav a:hover,
+aside nav a:focus {
+    color: white;
+    background-color: #e74c3c;
+    text-decoration: none;
+    outline: none;
+}
+
+aside nav a:focus {
+    outline: 2px solid #e74c3c;
+    outline-offset: 2px;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    aside {
+        position: static;
+        top: auto;
+    }
+
+    main h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    header nav li {
+        flex: 1;
+        min-width: 100px;
+        font-size: 0.9rem;
+    }
+
+    header nav a {
+        padding: 0.8rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    aside {
+        padding: 1rem;
+    }
+
+    aside h2 {
+        font-size: 1.1rem;
+    }
+}
